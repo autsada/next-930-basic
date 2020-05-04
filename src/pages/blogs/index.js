@@ -4,8 +4,6 @@ import Link from 'next/link'
 import { getMovies } from '../../db'
 
 function index({ movies }) {
-  console.log(movies)
-
   return (
     <div style={{ width: '60%', margin: '0 auto' }}>
       <h2>Blogs Page</h2>

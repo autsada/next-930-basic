@@ -1,15 +1,24 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import { getMovies } from '../../db'
 
 function Blog({ movie }) {
+  const router = useRouter()
+
   return (
     <div style={{ width: '60%', margin: '0 auto' }}>
-      <h2>{movie.title}</h2>
-      <span>
-        {movie.writer} / {movie.post_date}
-      </span>
-      <p>{movie.detail}</p>
+      {router.isFallback ? (
+        <p>Loading....</p>
+      ) : (
+        <>
+          <h2>{movie.title}</h2>
+          <span>
+            {movie.writer} / {movie.post_date}
+          </span>
+          <p>{movie.detail}</p>
+        </>
+      )}
     </div>
   )
 }
@@ -20,8 +29,8 @@ export const getStaticPaths = async () => {
   const paths = movies.map((movie) => ({ params: { blogId: movie.id } }))
 
   return {
-    paths,
-    fallback: false,
+    paths: paths.slice(0, 5),
+    fallback: true,
   }
 }
 
