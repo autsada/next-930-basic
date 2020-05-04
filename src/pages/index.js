@@ -1,8 +1,6 @@
-import Head from 'next/head'
-
 export default function Home() {
   return (
-    <div>
+    <div style={{ width: '60%', margin: '0 auto' }}>
       <h2>Getting Started</h2>
 
       <p>Welcome to the Next.js documentation!</p>
