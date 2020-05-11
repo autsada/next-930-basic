@@ -11,7 +11,7 @@ function dashboard({ me }) {
 
 export const getServerSideProps = async ({ req, res }) => {
   let user
-  const response = await fetch(`http://localhost:3000/api/users/6`)
+  const response = await fetch(`http://localhost:3000/api/users/4`)
 
   if (!response.ok) {
     res.writeHead(302, { Location: '/' })
