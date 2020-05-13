@@ -15,4 +15,27 @@ function App({ Component, pageProps }) {
   )
 }
 
+export const getServerSideProps = async ({ req, res }) => {
+  let user
+  const response = await fetch(`http://localhost:3000/api/users/4`)
+
+  if (!response.ok) {
+    res.writeHead(302, { Location: '/' })
+    res.end()
+  } else {
+    const data = await response.json()
+
+    if (data) {
+      user = data
+    } else {
+      res.writeHead(302, { Location: '/' })
+      res.end()
+    }
+  }
+
+  return {
+    props: { me: user || null },
+  }
+}
+
 export default App
