@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch'
 
 function dashboard({ me }) {
   useEffect(() => {
-    console.log('Public Key browser -->', process.env.MY_PUBLIC_KEY)
+    console.log('Public Key browser -->', process.env.NEXT_PUBLIC_MY_PUBLIC_KEY)
     console.log('Secrety Key browser -->', process.env.MY_SECRET_KEY)
   }, [])
 
@@ -20,7 +20,7 @@ export const getServerSideProps = async ({ req, res }) => {
   let user
   const response = await fetch(`http://localhost:3000/api/users/4`)
 
-  console.log('Public Key server -->', process.env.MY_PUBLIC_KEY)
+  console.log('Public Key server -->', process.env.NEXT_PUBLIC_MY_PUBLIC_KEY)
   console.log('Secrety Key server -->', process.env.MY_SECRET_KEY)
 
   if (!response.ok) {
