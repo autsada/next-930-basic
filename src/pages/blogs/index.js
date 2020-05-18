@@ -5,7 +5,7 @@ import { getMovies } from '../../db'
 
 function index({ movies }) {
   return (
-    <div style={{ width: '60%', margin: '0 auto' }}>
+    <div>
       <h2>Blogs Page</h2>
 
       <div>

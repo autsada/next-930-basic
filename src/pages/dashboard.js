@@ -7,11 +7,7 @@ function dashboard({ me }) {
     console.log('Secrety Key browser -->', process.env.MY_SECRET_KEY)
   }, [])
 
-  return (
-    <div style={{ width: '60%', margin: '0 auto' }}>
-      {!me ? <p>Loading...</p> : <p>{me.name}'s dashboard</p>}
-    </div>
-  )
+  return <div>{!me ? <p>Loading...</p> : <p>{me.name}'s dashboard</p>}</div>
 }
 
 export default dashboard

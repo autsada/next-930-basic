@@ -7,7 +7,7 @@ function Blog({ movie }) {
   const router = useRouter()
 
   return (
-    <div style={{ width: '60%', margin: '0 auto' }}>
+    <div>
       {router.isFallback ? (
         <p>Loading....</p>
       ) : (

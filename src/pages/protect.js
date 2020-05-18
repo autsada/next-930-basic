@@ -9,7 +9,7 @@ function protect() {
   useEffect(() => {
     let isMounted = true
     const getUser = async () => {
-      const response = await fetch(`http://localhost:3000/api/users/6`)
+      const response = await fetch(`http://localhost:3000/api/users/3`)
 
       if (!response.ok) {
         router.push('/')
@@ -33,11 +33,7 @@ function protect() {
     }
   }, [])
 
-  return (
-    <div style={{ width: '60%', margin: '0 auto' }}>
-      {!me ? <p>Loading...</p> : <p>{me.name}'s dashboard</p>}
-    </div>
-  )
+  return <div>{!me ? <p>Loading...</p> : <p>{me.name}'s dashboard</p>}</div>
 }
 
 export default protect
