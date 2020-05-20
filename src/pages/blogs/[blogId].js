@@ -5,7 +5,6 @@ import { getMovies } from '../../db'
 
 function Blog({ movie }) {
   const router = useRouter()
-
   return (
     <div>
       {router.isFallback ? (

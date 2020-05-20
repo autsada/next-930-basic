@@ -1,4 +1,16 @@
+// import { useEffect } from 'react'
+import Router from 'next/router'
+
 export default function Home() {
+  // useEffect(() => {
+  //   if (Router.router) {
+  //     console.log(Router.router.query)
+  //   }
+  // }, [])
+
+  Router.events.on('routeChangeStart', () => console.log('Start'))
+  Router.events.on('routeChangeComplete', () => console.log('Complete'))
+
   return (
     <>
       <h2>Getting Started</h2>

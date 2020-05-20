@@ -6,13 +6,14 @@ function protect() {
 
   const router = useRouter()
 
+  // console.log(router)
   useEffect(() => {
     let isMounted = true
     const getUser = async () => {
-      const response = await fetch(`http://localhost:3000/api/users/3`)
+      const response = await fetch(`http://localhost:3000/api/users/6`)
 
       if (!response.ok) {
-        router.push('/')
+        router.replace('/')
       } else {
         const data = await response.json()
 
@@ -27,6 +28,8 @@ function protect() {
     }
 
     getUser()
+
+    console.log(router)
 
     return () => {
       isMounted = false
